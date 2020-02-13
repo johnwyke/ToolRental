@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace ToolRental.Data
+namespace ToolRental.DataAccess
 {
     public class ApplicationDbContext : IdentityDbContext
     {
