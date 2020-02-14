@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ToolRental.Models;
 
 namespace ToolRental.DataAccess
 {
@@ -12,5 +13,9 @@ namespace ToolRental.DataAccess
             : base(options)
         {
         }
+
+        public DbSet<Category> Category { get; set; }
+
+
     }
 }
