@@ -10,10 +10,10 @@ namespace ToolRental.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategroyController : Controller
+    public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        public CategroyController(IUnitOfWork unitofwork)
+        public CategoryController(IUnitOfWork unitofwork)
         {
             _unitOfWork = unitofwork;
         }
