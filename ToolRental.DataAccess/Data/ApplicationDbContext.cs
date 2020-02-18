@@ -17,6 +17,7 @@ namespace ToolRental.DataAccess
         public DbSet<Category> Category { get; set; }
 
         public DbSet<JobType> JobType { get; set; }
+        public DbSet<RentalItem> RentalItem { get; set; }
 
 
     }

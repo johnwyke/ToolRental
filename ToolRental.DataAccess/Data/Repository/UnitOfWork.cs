@@ -13,11 +13,12 @@ namespace ToolRental.DataAccess.Data.Repository
             _db = db;
             Category = new CategoryRepository(_db);
             JobType = new JobTypeRepository(_db);
-
+            RentalItem = new RentalItemRepository(_db);
 
         }
         public ICategoryRepository Category { get; private set; }
         public IJobTypeRepository JobType { get; private set; }
+        public IRentalItemRepository RentalItem { get; private set; }
         
 
         public void Dispose()
