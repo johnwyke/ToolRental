@@ -1,8 +1,114 @@
 ﻿@page
-@model ToolRental.UpsertModel
-@{
-    ViewData["Title"] = "Upsert";
+@model ToolRental.Pages.Admin.RentalItem.UpsertModel
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row px-2 mx-2 backgroundWhite border">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if (Model.RentalItemObj.RentalItem.Id != 0)
+        {
+            <input type="hidden" asp-for="RentalItemObj.RentalItem.Id" />
+        }
+            <div class="col-12 px-3" style="border-bottom: 1px solid #325d88">
+                <h2 class="text-primary">@(Model.RentalItemObj.RentalItem.Id != 0 ? "Update" : "Create")Rental Item</h2>
+            </div>
+            <div class="col-8 pt-3">
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="RentalItemObj.RentalItem.Name"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" asp-for="RentalItemObj.RentalItem.Name" />
+                        <span class="text-danger" asp-validation-for="RentalItemObj.RentalItem.Name"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="RentalItemObj.RentalItem.Price"></label>
+                    </div>
+                    <div class="col-9">
+                        <input class="form-control" asp-for="RentalItemObj.RentalItem.Price" />
+                        <span class="text-danger" asp-validation-for="RentalItemObj.RentalItem.Price"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="RentalItemObj.RentalItem.Description"></label>
+                    </div>
+                    <div class="col-9">
+                        <textarea class="form-control" asp-for="RentalItemObj.RentalItem.Description" id="txtDesc" style="height:200px;"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="RentalItemObj.RentalItem.Image"></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="file" class="form-control" name="files" id="files" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="RentalItemObj.RentalItem.ToolCategoryId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m =>m.RentalItemObj.RentalItem.ToolCategoryId,
+                       Model.RentalItemObj.ToolCategoryList,
+                       "-Please Select a Category",
+                       new {@class ="form-control"})
+                        <span class="text-danger" asp-validation-for="RentalItemObj.RentalItem.ToolCategoryId"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label asp-for="RentalItemObj.RentalItem.JobTypeId"></label>
+                    </div>
+                    <div class="col-9">
+                        @Html.DropDownListFor(m => m.RentalItemObj.RentalItem.JobTypeId,
+                        Model.RentalItemObj.JobTypeList,
+                        "-Please Select a Job Type",
+                        new { @class = "form-control" })
+                        <span class="text-danger" asp-validation-for="RentalItemObj.RentalItem.JobTypeId"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-9 offset-3">
+                        <div class="row">
+                            <div class="col-6">
+                                @if (Model.RentalItemObj.RentalItem.Id != 0)
+                            {
+                                <button type="submit" class="btn btn-primary form-control">Update</button>
+                            }
+                            else
+                            {
+                                <button type="submit" class="btn btn-primary form-control" onclick="return ValidateInput()">Create</button>
+                            }
+
+                            </div>
+                            <div class="col-6">
+                                <a asp-page="./Index" class="btn btn-success form-control">Back to List</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @if(Model.RentalItemObj.RentalItem.Image != null)
+        {
+            <div class="col-4 p-4">
+                <img src="@Model.RentalItemObj.RentalItem.Image" width="100%" style="border-radius:5px; border:1px solid #bbb9b9;" />
+            </div>
+        }
+
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'lists',
+            menubar: 'file edit format'
+        });
+    </script>
 }
-
-<h1>Upsert</h1>
-
