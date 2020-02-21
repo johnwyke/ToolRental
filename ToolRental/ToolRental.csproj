@@ -24,4 +24,9 @@
     <ProjectReference Include="..\ToolRental.Utility\ToolRental.Utility.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\RentalItems\" />
+  </ItemGroup>
+
 </Project>

@@ -40,6 +40,7 @@ namespace ToolRental
                 //.AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             //services.AddSingleton<IEmailSender, IEmailSender>();
+            services.AddSession();
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
@@ -61,6 +62,7 @@ namespace ToolRental
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 
