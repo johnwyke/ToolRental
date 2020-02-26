@@ -12,8 +12,10 @@ function loadList() {
             "datatype": "json"
         },
         "columns": [
-            { "data": "name", "width": "40%" },
-            { "data": "displayOrder", "width": "30%" },
+            { "data": "name", "width": "25%%" },
+            { "data": "price", render: $.fn.dataTable.render.number(',', '.', 2, '$'), "width": "15%%" },
+            { "data": "category.name", "width": "15%%" },
+            { "data": "jobType.name", "width": "15%%" },
             {
                 "data": "id",
                 "render": function (data) {

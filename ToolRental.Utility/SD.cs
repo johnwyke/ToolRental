@@ -8,5 +8,8 @@ namespace ToolRental.Utility
     {
         public const string ManagerRole = "Manager";
         public const string CustomerRole = "Customer";
+
+        public const string ShoppingCart = "ShoppingCart";
+
     }
 }
