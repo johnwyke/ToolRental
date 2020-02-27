@@ -9,6 +9,7 @@ namespace ToolRental.DataAccess.Data.Repository.IRepository
         ICategoryRepository Category { get;}
         IJobTypeRepository JobType { get; }
         IRentalItemRepository RentalItem { get; }
+        IApplicationUserRepository ApplicationUser { get; }
 
         void Save();
     }

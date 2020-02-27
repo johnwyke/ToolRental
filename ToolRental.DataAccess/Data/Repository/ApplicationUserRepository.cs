@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using ToolRental.DataAccess.Data.Repository.IRepository;
 using ToolRental.Models;
@@ -14,5 +16,6 @@ namespace ToolRental.DataAccess.Data.Repository
         {
             _db = db; 
         }
+
     }
 }

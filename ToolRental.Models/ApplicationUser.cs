@@ -11,7 +11,8 @@ namespace ToolRental.Models
         public string LastName { get; set; }
 
         public string FirstName { get; set; }
+
         [NotMapped]
-        public string Fullname { get { return FirstName + " " + LastName; } }
+        public string FullName { get { return FirstName + " " + LastName; } }
     }
 }
