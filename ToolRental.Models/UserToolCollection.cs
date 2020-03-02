@@ -24,8 +24,12 @@ namespace ToolRental.Models
         [ForeignKey("RentalItemId")]
         public virtual RentalItem RentalItem { get; set; }
 
+
+
         [NotMapped]
         [ForeignKey("ApplicationUserId")]
         public virtual ApplicationUser ApplicationUser { get; set; }
+
+
     }
 }

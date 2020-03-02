@@ -15,12 +15,14 @@ namespace ToolRental.DataAccess.Data.Repository
             JobType = new JobTypeRepository(_db);
             RentalItem = new RentalItemRepository(_db);
             ApplicationUser = new ApplicationUserRepository(_db);
+            UserToolCollection = new UserToolCollectionRepository(_db);
 
         }
         public ICategoryRepository Category { get; private set; }
         public IJobTypeRepository JobType { get; private set; }
         public IRentalItemRepository RentalItem { get; private set; }
         public IApplicationUserRepository ApplicationUser { get; private set; }
+        public IUserToolCollectionRepository UserToolCollection { get; private set; }
         
 
         public void Dispose()

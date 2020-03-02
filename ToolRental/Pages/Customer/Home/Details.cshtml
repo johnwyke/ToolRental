@@ -1,19 +1,19 @@
 ﻿@page
-@model ToolRental.DetailsModel
+@model ToolRental.Pages.Customer.Home.DetailsModel
 @using ToolRental.Utility
 
 <div class="">
     <form method="post">
-        <input type="hidden" asp-for="ShoppingCartObj.MenuItemId" />
+        <input type="hidden" asp-for="UserToolCollection.RentalItemId" />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="container backgroundWhite">
             <div class="card">
                 <div class="card-header bg-light text-light ml-0 row container">
                     <div class="col-12 col-md-6">
-                        <h1 class="text-primary">@Model.ShoppingCartObj.MenuItem.Name</h1>
+                        <h1 class="text-primary">@Model.UserToolCollection.RentalItem.Name</h1>
                     </div>
                     <div class="col-12 col-md-6 text-md-right">
-                        <h1 class="text-muted"> @((Model.ShoppingCartObj.MenuItem.Price).ToString("c"))</h1>
+                        <h1 class="text-muted"> @((Model.UserToolCollection.RentalItem.Price).ToString("c"))</h1>
                     </div>
                 </div>
                 <div class="card-body">
@@ -23,17 +23,17 @@
                                 <div class="row">
 
                                     <div class="col-12">
-                                        <span class="badge badge-warning h3">@Model.ShoppingCartObj.MenuItem.Category.Name</span>
-                                        <span class="badge badge-dark">@Model.ShoppingCartObj.MenuItem.FoodType.Name</span>
+                                        <span class="badge badge-warning h3">@Model.UserToolCollection.RentalItem.Category.Name</span>
+                                        <span class="badge badge-dark">@Model.UserToolCollection.RentalItem.JobType.Name</span>
                                         <h3 class="text-success"></h3>
 
-                                        <p class="text-secondary">@Html.Raw(Model.ShoppingCartObj.MenuItem.Description)</p>
+                                        <p class="text-secondary">@Html.Raw(Model.UserToolCollection.RentalItem.Description)</p>
 
                                         <div class="row py-4">
-                                            <div class="col-2"><label asp-for="ShoppingCartObj.Count" class="h3"></label></div>
+                                            <div class="col-2"><label asp-for="UserToolCollection.Count" class="h3"></label></div>
                                             <div class="col-2">
-                                                <input type="number" asp-for="ShoppingCartObj.Count" class="form-control rounded" />
-                                                <span asp-validation-for="ShoppingCartObj.Count" class="text-danger"></span>
+                                                <input type="number" asp-for="UserToolCollection.Count" class="form-control rounded" />
+                                                <span asp-validation-for="UserToolCollection.Count" class="text-danger"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 p-1 text-center">
-                                <img src="@Model.ShoppingCartObj.MenuItem.Image" width="100%" class="rounded" />
+                                <img src="@Model.UserToolCollection.RentalItem.Image" width="100%" class="rounded" />
                             </div>
 
 
@@ -54,7 +54,7 @@
                             <a asp-page="Index" class="btn btn-success btn-square form-control btn-lg" style="height:50px;">Back to List</a>
                         </div>
                         <div class="col-12 col-md-6 ">
-                            <button type="submit" class="btn btn-primary btn-square form-control btn-lg" style="height:50px;">Add to Cart</button>
+                            <button type="submit" class="btn btn-primary btn-square form-control btn-lg" style="height:50px;">Add to Collection</button>
                         </div>
                     </div>
                 </div>

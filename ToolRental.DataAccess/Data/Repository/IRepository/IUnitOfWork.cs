@@ -11,6 +11,8 @@ namespace ToolRental.DataAccess.Data.Repository.IRepository
         IRentalItemRepository RentalItem { get; }
         IApplicationUserRepository ApplicationUser { get; }
 
+        IUserToolCollectionRepository UserToolCollection { get; }
+
         void Save();
     }
 }
